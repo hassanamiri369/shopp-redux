@@ -10,7 +10,7 @@ const ProductList = () => {
 
     const dispatch = useDispatch()
 
-    const state = useSelector(state => state.setProductReducer.products)
+   
 
     const fetchProductData = async () => {
         await fetch("https://fakestoreapi.com/products")
@@ -28,7 +28,7 @@ const ProductList = () => {
     return (
         <div>
             <ProductComponent/>
-            {console.log(state)}
+            
         </div>
     )
 }

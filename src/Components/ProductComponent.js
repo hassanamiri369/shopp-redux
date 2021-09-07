@@ -1,11 +1,20 @@
 import React from 'react'
 import "./ProductComponent.css";
 
+import { useSelector } from 'react-redux';
+
 
 const ProductComponent = () => {
+
+    const state = useSelector((stata) => stata.setProductReducer.products)
+    
     return (
         <div>
-            Product Components
+            {
+                state.map((item) => (
+                    <p>{item.title}</p>
+                ))
+            }
         </div>
     )
 }
