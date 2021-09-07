@@ -1,9 +1,34 @@
-import React from 'react'
+import React , {useEffect} from 'react'
+import {useDispatch , useSelector} from "react-redux"
 
+
+//action creator => setProduct
+
+import {setProduct} from "../Redux/ActionCreator/ActionCreator"
+import ProductComponent from './ProductComponent'
 const ProductList = () => {
+
+    const dispatch = useDispatch()
+
+    const state = useSelector(state => state.setProductReducer.products)
+
+    const fetchProductData = async () => {
+        await fetch("https://fakestoreapi.com/products")
+        .then(response => response.json())
+        .then(json => dispatch(setProduct(json)))
+        
+    }
+
+    useEffect(() => {
+        fetchProductData()
+    } , [])    
+
+
+
     return (
         <div>
-            product list
+            <ProductComponent/>
+            {console.log(state)}
         </div>
     )
 }
