@@ -4,18 +4,40 @@ import "./ProductComponent.css";
 import { useSelector } from 'react-redux';
 
 
+// add style 
+import { Button, Container, Row, Col, Card } from 'react-bootstrap';
+
 const ProductComponent = () => {
 
     const state = useSelector((stata) => stata.setProductReducer.products)
-    
+
     return (
-        <div>
+        <Container fluid className="container-div" >
+            <Row className="row-div"  >
             {
                 state.map((item) => (
-                    <p>{item.title}</p>
+                    
+                        <Col xs={12} sm={6} md={4} lg={3} className="col-div" >
+                            <Card className="card-div" >
+                                <Card.Img variant="top" src={item.image} className="img-card" />
+                                <Card.Body className="card-body" >
+                                    <Card.Title>{item.price}</Card.Title>
+                                    <Card.Text>
+                                        {item.title}
+                                    </Card.Text>
+                                    <Card.Text className="card-text" >
+                                    <Button variant="primary">view</Button>
+                                    <Button variant="secondary">Add To Cart</Button>
+                                    </Card.Text>
+                                </Card.Body>
+                            </Card>
+                        </Col>
+
+                    
                 ))
             }
-        </div>
+            </Row>
+        </Container>
     )
 }
 
