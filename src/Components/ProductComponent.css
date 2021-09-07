@@ -1,0 +1,46 @@
+.container-div{
+    display: flex;
+    justify-content: center;
+    background-color: lightgray;
+}
+
+.row-div{
+    display: flex;
+    justify-content: center;
+}
+
+.col-div{
+    min-height: 400px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 8px;
+}
+.card-div{
+    width: 22rem;
+    border-radius: 7px;
+    box-shadow: 0 0 15px gray;
+}
+
+.card-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-text{
+    display: flex;
+    justify-content: space-around;
+}
+
+
+.img-card{
+    width: 100%;
+    height: 300px;
+    object-fit: contain;
+}
+/* 
+.row-div{
+    display: flex;
+    justify-content: center;
+} */
