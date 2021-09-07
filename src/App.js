@@ -8,6 +8,7 @@ function App() {
   return (
     <div className="App">
      <Router>
+       
        <Switch>
          <Route path="/" component={ProductList} />
          <Route path="/product/:productId" component ={ProductDetails}/>
