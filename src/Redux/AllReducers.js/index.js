@@ -1,12 +1,11 @@
-import {combineReducer} from "redux";
+import {combineReducers} from "redux";
 
 import {setProductReducer , selectProductReducer} from "./MyReducer"
 
 
-const reducers = combineReducer({
+export const reducers = combineReducers({
     setProductReducer : setProductReducer ,
     selectProductReducer : selectProductReducer
 })
 
 
-export default reducers
