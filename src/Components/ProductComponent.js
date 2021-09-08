@@ -2,7 +2,7 @@ import React from 'react'
 import "./ProductComponent.css";
 
 import { useSelector } from 'react-redux';
-
+import { Link } from 'react-router-dom';
 
 // add style 
 import { Button, Container, Row, Col, Card } from 'react-bootstrap';
@@ -26,7 +26,9 @@ const ProductComponent = () => {
                                         {item.title}
                                     </Card.Text>
                                     <Card.Text className="card-text" >
-                                    <Button variant="primary">view</Button>
+                                    <Button variant="success" color="primary">
+                                        <Link style={{color: "white" , textDecoration : "none"}} to = {`/product/${item.id}`} >View</Link>
+                                    </Button>
                                     <Button variant="secondary">Add To Cart</Button>
                                     </Card.Text>
                                 </Card.Body>
